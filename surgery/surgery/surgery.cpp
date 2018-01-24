@@ -9,14 +9,38 @@
 
 using namespace std;
 
-class user {
-	
+class login {
+	void GetDetails(string sUsernamepass, string sPasswordpass);
+
+private:
+	string sUsername = "";
+	string sPassword = "";
 };
 
+void GetDetails(string sUsernamepass, string sPasswordpass)
+{
+	string sUsername = sUsernamepass;
+	string sPassword = sPasswordpass;
+
+
+}
 
 
 int main()
 {
+	login ologin;
+
+	string sUsername;
+	string sPassword;
+
+	cout << "Welcome to the program";
+	cout << "\n\n Please enter your Username: ";
+	cin >> sUsername;
+	cout << "\n please enter your Password: ";
+	cin >> sPassword;
+
+	oLogin:GetDetails(sUsername, sPassword);
+
     return 0;
 }
 
