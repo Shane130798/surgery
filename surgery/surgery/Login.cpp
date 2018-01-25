@@ -51,8 +51,7 @@ int main()
 	int iAttempts = 0;
 	cout << "Welcome to the program";
 
-	//for (int iCount; iCount < 3; iCount++)
-	//{
+
 	do {
 		cout << "\n\n Please enter your Username: ";
 		cin >> sUsername;
@@ -61,8 +60,15 @@ int main()
 		ologin.GetDetails(sUsername, sPassword);
 		bVerify = ologin.bCheckLogin();
 		iAttempts++;
-	} while (bVerify == false || iAttempts > 2);
-	//}
+		if (iAttempts > 2) {
+			exit(EXIT_FAILURE);
+	}
+		else {
+
+		}
+		
+	} while (bVerify == false );
+	cout << "\nYou've Logged in successfully";
 	_getch();
     return 0;
 }
