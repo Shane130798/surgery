@@ -22,10 +22,69 @@ private:
 
 };
 
+class Appointment {
+public:
+	void OutputAppointments();
+	void BookingForm();
+	void GetBookingDetails(int iRoomNumberpass, string sPatientNamepass, string sDoctorNamepass, string sPatientNumberpass, string sPatientAddresspass, string sPatientAilmentpass, string sTimepass, string sDatepass);
+protected:
+	int iRoomNumber = 0;
+	string sDoctorName;
+	string sPatientName;
+	string sPatientNumber;
+	string sPatientAddress;
+	string sPatientAilment;
+	string sTime;
+	string sDate;
+};
+
+void Appointment::BookingForm()
+{
+	cout << "Please enter the Name of the Patient: "; cin >> sPatientName;
+	cout << "\n Please enter the Address of the Patient: "; cin >> sPatientAddress;
+	cout << "\n Please enter the Ailment of the Patient: "; cin >> sPatientAilment;
+	cout << "\n please enter the Number of ICE: "; cin >> sPatientNumber;
+	cout << "\n Please enter a Date for Appointment dd/mm/yyyy : "; cin >> sDate;
+	cout << "\n Please enter a Time for Appointment between 9AM - 5PM : "; cin >> sTime;
+	bool bExit = false;
+	do {
+		cout << "Is the Patient under 18 Years? answer 1 for Yes 0 for no: "; int iChoice = 0; cin >> iChoice;
+		
+		switch (iChoice)
+		{
+		default:
+			cout << "You've selected an invalid option Please Select again\n\n\n\n";
+			break;
+		case 1:
+			Appointment::sDoctorName = "Joel";
+			bExit = true;
+			break;
+		case 0:
+			Appointment::sDoctorName = "Shane";
+			bExit = true;
+			break;
+		};
+	} while (bExit = false);
+}
+void Appointment::GetBookingDetails(int iRoomNumberpass, string sPatientNamepass,string sDoctorNamepass, string sPatientNumberpass, string sPatientAddresspass, string sPatientAilmentpass, string sTimepass, string sDatepass)
+{
+	int iRoomNumber = iRoomNumberpass;
+	string sDoctorName = sDoctorNamepass;
+	string sPatientNumber = sPatientNumberpass;
+	string sPatientAddress = sPatientAddresspass;
+	string sPatientAilment = sPatientAilmentpass;
+	string sTime = sTimepass;
+	string sDate = sDatepass;
+	string sPatientName = sPatientNamepass;
+}
+
+void Appointment::OutputAppointments()
+{
+	//cout stuff here
+}
+
 class doctor {
 public:
-
-	void GetAppointments();
 protected:
 	string sDoctorName;
 	string sSpecialism;
@@ -40,7 +99,7 @@ public:
 	void GetAppointmentsDoc1();
 protected:
 	string sDocotorName = "Shane";
-	string sSpecialism = "Chiropractor";
+	string sSpecialism = "Ze Doctor";
 	/*appointments*/
 private:
 
@@ -95,9 +154,23 @@ bool login::bCheckLogin()
 
 	if (sUsername == "Admin" && sPassword == "Password")
 	{
-		cout << "Correct";
+		cout << "Correct\n";
 		bVerify = true;
+		return bVerify;
 	}
+	else if (sUsername == "Shane" && sPassword == "Wells")
+	{
+		cout << "Correct\n";
+			bVerify = true;
+			return bVerify;
+	}
+	else if (sUsername == "Joel" && sPassword == "Password")
+	{
+		cout << "Correct\n";
+		bVerify = true;
+		return bVerify;
+	}
+
 	else
 	{
 		cout << "\n You've entered the incorrect Username or Password";
@@ -141,11 +214,12 @@ int main()
 
 	do {
 		int iChoice = 0;
-		cout << "\n\n Please select from one of the below. ";
-		cout << "1.Surgery Information \n";
-		cout << "2.Doctors Info \n";
-		cout << "3.Booking Ststem \n";
-		cout << "4.Booking Overview \n";
+		cout << "\n\n Please select from one of the below. \n";
+		cout << "1.Surgery Information \n"; /*Viewing Doctors, etc.*/
+		cout << "2.Doctors Info \n"; /*Doctor and Speciality, Appointtments*/
+		cout << "3.Booking System \n";/*Booking New Patient in*/
+		cout << "4.Booking Overview \n";/*Appointments booked into Surgery*/
+		cout << "5.Exit Program \n"; /*really? You actually need me to explain this.. Wot do u fink it dos, eh?*/
 		cin >> iChoice;
 		switch (iChoice)
 		{
@@ -163,6 +237,9 @@ int main()
 		case 4:
 			/*do this*/
 			break;
+		case 5:
+			_getch();
+			EXIT_FAILURE;
 		}
 	} while (bExit = false);
 
