@@ -10,6 +10,69 @@
 
 using namespace std;
 
+class Surgery {
+public:
+
+protected:
+	string sname;
+	string sLocation;
+	string sDoctors;
+	/*Appointments*/
+private:
+
+};
+
+class doctor {
+public:
+
+	void GetAppointments();
+protected:
+	string sDoctorName;
+	string sSpecialism;
+	/*Appointments*/
+
+private:
+
+};
+
+class doctor1 : public doctor {
+public:
+	void GetAppointmentsDoc1();
+protected:
+	string sDocotorName = "Shane";
+	string sSpecialism = "Chiropractor";
+	/*appointments*/
+private:
+
+
+};
+
+class doctor2 : public doctor {
+public:
+	void GetAppointmentsDoc2();
+protected:
+	string sDocotorName = "Joel";
+	string sSpecialism = "Paediatrician";
+	/*appointments*/
+private:
+
+
+};
+
+class patient {
+public:
+
+protected:
+	string spatientName;
+	string sNumber;
+	string sAddress;
+	string sAilment;
+
+private:
+
+};
+
+/*login Class*/
 class login {
 public:
 	void GetDetails(string sUsernamepass, string sPasswordpass);
@@ -18,13 +81,13 @@ protected:
 	string sUsername = "";
 	string sPassword = "";
 };
-
+/*Perameter Passing*/
 void login::GetDetails(string sUsernamepass, string sPasswordpass)
 {
 	sUsername = sUsernamepass;
 	sPassword = sPasswordpass;
 }
-
+/*login Validation*/
 bool login::bCheckLogin()
 {
 	bool bVerify = false;
@@ -44,14 +107,14 @@ bool login::bCheckLogin()
 
 int main()
 {
-	login ologin;
-	string sUsername;
+	login ologin; /*Declaring Object*/
+	string sUsername; /*Declaring Variabled*/
 	string sPassword;
-	bool bVerify = false;
-	int iAttempts = 0;
-	cout << "Welcome to the program";
+	bool bVerify = false; /*Loop Preporation*/
+	int iAttempts = 0;			/*^^^*/
+	cout << "Welcome to the program";/*Displaying text to User*/
 
-
+	/*Login Loop*/
 	do {
 		cout << "\n\n Please enter your Username: ";
 		cin >> sUsername;
@@ -69,7 +132,7 @@ int main()
 		
 	} while (bVerify == false );
 	cout << "\nYou've Logged in successfully";
-
+	/*END login loop*/
 
 
 
