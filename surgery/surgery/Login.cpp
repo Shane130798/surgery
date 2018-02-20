@@ -72,6 +72,7 @@ private:
 
 };
 
+
 /*login Class*/
 class login {
 public:
@@ -135,6 +136,35 @@ int main()
 	/*END login loop*/
 
 
+
+	bool bExit = false;
+
+	do {
+		int iChoice = 0;
+		cout << "\n\n Please select from one of the below. ";
+		cout << "1.Surgery Information \n";
+		cout << "2.Doctors Info \n";
+		cout << "3.Booking Ststem \n";
+		cout << "4.Booking Overview \n";
+		cin >> iChoice;
+		switch (iChoice)
+		{
+		default:
+			break;
+		case 1:
+			/*do this*/
+			break;
+		case 2:
+			/*do this*/
+			break;
+		case 3:
+			/*do this*/
+			break;
+		case 4:
+			/*do this*/
+			break;
+		}
+	} while (bExit = false);
 
 
 
