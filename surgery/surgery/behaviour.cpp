@@ -67,24 +67,29 @@ void login::GetDetails(string sUsernamepass, string sPasswordpass)
 bool login::bCheckLogin()
 {
 	bool bVerify = false;
+	bool bDoctor = false;
 
 	if (sUsername == "Admin" && sPassword == "Password")
 	{
 		cout << "Correct\n";
 		bVerify = true;
-		return bVerify;
+		bDoctor = true;
+		return bVerify,bDoctor;
+
 	}
 	else if (sUsername == "Shane" && sPassword == "Wells")
 	{
 		cout << "Correct\n";
 		bVerify = true;
-		return bVerify;
+		bDoctor = true;
+		return bVerify, bDoctor;
 	}
 	else if (sUsername == "Joel" && sPassword == "Password")
 	{
 		cout << "Correct\n";
 		bVerify = true;
-		return bVerify;
+		bDoctor = true;
+		return bVerify, bDoctor;
 	}
 
 	else if (sUsername == "Sean" && sPassword == "Searing")
@@ -97,6 +102,7 @@ bool login::bCheckLogin()
 	else
 	{
 		cout << "\n You've entered the incorrect Username or Password";
+		bVerify = false;
 	}
 	return bVerify;
 }

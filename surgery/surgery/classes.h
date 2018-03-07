@@ -1,3 +1,4 @@
+
 #pragma once
 
 
@@ -8,7 +9,7 @@ class Surgery {
 public:
 
 protected:
-	string sname = "Baytree Surgery";
+	string sName = "Baytree Surgery";
 	string sLocation = "Baytree Park, Weston Super Mare";
 	//Appointments
 private:

@@ -51,7 +51,7 @@ void DoctorsMenu()
 	int iChoice = 0;
 	cout << "/nSurgeryMenu";
 	cout << "/n/n Select from These options:";
-	cout << "1. Option\n ";
+	cout << "1.View Appointments\n ";
 	cout << "2. Option\n ";
 	cout << "3. Option\n ";
 	cout << "4. Option\n ";
@@ -117,12 +117,15 @@ void BookingOverview()
 void MainMenu()
 {
 	bool bExit = false;
+	bool bDoctor = false;
 
 	do {
 		int iChoice = 0;
 		cout << "\n\n Please select from one of the below. \n";
 		cout << "1.Surgery Information \n"; /*Viewing Doctors, etc.*/
-		cout << "2.Doctors Info \n"; /*Doctor and Speciality, Appointtments*/
+		if (bDoctor = true) {
+			cout << "2.Doctors Info \n"; /*Doctor and Speciality, Appointtments*/
+		};
 		cout << "3.Booking System \n";/*Booking New Patient in*/
 		cout << "4.Booking Overview \n";/*Appointments booked into Surgery*/
 		cout << "5.Exit Program \n"; /*really? You actually need me to explain this.. Wot do u fink it dos, eh?*/
@@ -156,6 +159,7 @@ int main()
 	string sUsername; /*Declaring Variabled*/
 	string sPassword;
 	bool bVerify = false; /*Loop Preporation*/
+	bool bDoctor = false;
 	int iAttempts = 0;			/*^^^*/
 	cout << "Welcome to the program";/*Displaying text to User*/
 
