@@ -1,7 +1,14 @@
-
 #pragma once
+#include "stdafx.h"
+#include <conio.h>
+#include <iostream>
+#include <array>
+#include <string>
+#include <STDLIB.H>
+#include <vector>
+#include <fstream>
 
-
+using namespace std;
 
 #ifndef Surgery
 
@@ -15,12 +22,9 @@ protected:
 private:
 
 };
- #endif
+#endif // !
 
-#ifndef Appointment 
-
- // !Appointment 
-
+#ifndef Appointment
 class Appointment {
 public:
 	void OutputAppointments();
@@ -36,9 +40,9 @@ protected:
 	string sTime;
 	string sDate;
 };
-#endif
+#endif // !Appointment
 
-#ifndef Doctor
+#ifndef doctor
 class doctor {
 public:
 protected:
@@ -49,7 +53,7 @@ protected:
 private:
 
 };
-#endif // !Doctor
+#endif // !doctor
 
 #ifndef patient
 class patient {
@@ -65,15 +69,20 @@ private:
 
 };
 #endif
-#ifndef login
 
-/*login Class*/
+#ifndef Login
 class login {
 public:
 	void GetDetails(string sUsernamepass, string sPasswordpass);
 	bool bCheckLogin();
+	void GetDoctorverification(bool bDoctorpass);
 protected:
 	string sUsername = "";
 	string sPassword = "";
+	bool bDoctor = false;
+	bool* p = &bDoctor;
 };
 #endif
+
+
+
