@@ -75,14 +75,11 @@ class login {
 public:
 	void GetDetails(string sUsernamepass, string sPasswordpass);
 	bool bCheckLogin();
-	void GetDoctorverification(bool bDoctorpass);
+	bool CheckDoctor();
+	void GetDoctor(bool bDoctorpass);
 protected:
 	string sUsername = "";
 	string sPassword = "";
 	bool bDoctor = false;
-	bool* p = &bDoctor;
 };
 #endif
-
-
-

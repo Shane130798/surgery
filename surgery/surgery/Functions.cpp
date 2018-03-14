@@ -14,21 +14,21 @@ using namespace std;
 void MainMenu()
 {
 	login ologin;
+	ologin.bCheckLogin();
 	
-	
+	//bDoctor = true;
 	bool bExit = false;
-
 	do {
-		ologin;
+		bool bDoctor = ologin.CheckDoctor();
 		int iChoice = 0;
 		
-		if (*p == true) {
+		if (bDoctor == true) {
 			cout << "\n\n Please select from one of the below. \n";
 			cout << "1.Surgery Information \n"; /*Viewing Doctors, etc.*/
 			cout << "2.Doctors Info \n"; /*Doctor and Speciality, Appointtments*/
 			cout << "3.Booking System \n";/*Booking New Patient in*/
 			cout << "4.Booking Overview \n";/*Appointments booked into Surgery*/
-			cout << "5.Exit Program \n";
+			cout << "5.Exit Program \n\n";
 
 			cin >> iChoice;
 			switch (iChoice)
@@ -36,24 +36,28 @@ void MainMenu()
 			default:
 				break;
 			case 1:
-				SurgeryMenu();
-				cout << "Surgery Menu \n" << flush;
 				system("CLS");
+				SurgeryMenu();
+				cout << "Surgery Menu \n";
+				
 				break;
 			case 2:
-				DoctorsMenu();
-				cout << "Doctors Menu \n" << flush;
 				system("CLS");
+				DoctorsMenu();
+				cout << "Doctors Menu \n";
+				
 				break;
 			case 3:
-				BookingMenu();
-				cout << "Booking Menu \n" << flush;
 				system("CLS");
+				BookingMenu();
+				cout << "Booking Menu \n";
+				
 				break;
 			case 4:
-				BookingOverview();
-				cout << "Booking OverView \n" << flush;
 				system("CLS");
+				BookingOverview();
+				cout << "Booking OverView \n";
+				
 				break;
 			case 5:
 				EXIT_FAILURE;
@@ -61,7 +65,8 @@ void MainMenu()
 				break;
 			} while (bExit == false);
 		}
-		else {
+		else 
+		{
 			cout << "\n\n Please select from one of the below. \n";
 			cout << "1.Surgery Information \n"; /*Viewing Doctors, etc.*/
 			cout << "2.Booking System \n";/*Booking New Patient in*/

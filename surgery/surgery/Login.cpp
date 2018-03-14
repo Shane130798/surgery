@@ -14,6 +14,11 @@
 
 using namespace std;
 
+void login::GetDoctor(bool bDoctorpass)
+{
+	bDoctor = bDoctorpass;
+}
+
 void Appointment::BookingForm()
 {
 	cout << "Please enter the Name of the Patient: "; cin >> sPatientName;
@@ -61,7 +66,12 @@ void Appointment::OutputAppointments()
 	//cout stuff here
 }
 
-
+bool login::CheckDoctor()
+{
+	login ologin;
+	bool bDoctor = ologin.bDoctor;
+	return bDoctor;
+}
 /*Perameter Passing*/
 void login::GetDetails(string sUsernamepass, string sPasswordpass)
 
@@ -74,37 +84,39 @@ bool login::bCheckLogin()
 
 {
 	bool bVerify = false;
-
+	login ologin;
 	if (sUsername == "Admin" && sPassword == "Password")
 	{
 		cout << "Correct\n";
 		bVerify = true;
-		bDoctor = true;
-		login::GetDoctorverification(bDoctor);
-		return bVerify, bDoctor;
+		ologin.bDoctor = true;
+		ologin.GetDoctor(bDoctor);
+		return bVerify;
 
 	}
 	else if (sUsername == "Shane" && sPassword == "Wells")
 	{
 		cout << "Correct\n";
 		bVerify = true;
-		bDoctor = true;
-		login::GetDoctorverification(bDoctor);
-		return bVerify, bDoctor;
+		ologin.bDoctor = true;
+		ologin.GetDoctor(bDoctor);
+		return bVerify;
 	}
 	else if (sUsername == "Joel" && sPassword == "Password")
 	{
 		cout << "Correct\n";
 		bVerify = true;
-		bDoctor = true;
-		login::GetDoctorverification(bDoctor);
-		return bVerify, bDoctor;
+		ologin.bDoctor = true;
+		ologin.GetDoctor(bDoctor);
+		return bVerify;
 	}
 
 	else if (sUsername == "Sean" && sPassword == "Shearing")
 	{
 		cout << "Correct\n";
 		bVerify = true;
+		bDoctor = false;
+		ologin.GetDoctor(bDoctor);
 		return bVerify;
 	}
 
@@ -114,22 +126,17 @@ bool login::bCheckLogin()
 		system("cls");
 		bVerify = false;
 	}
-	return (bVerify);
+	return bVerify;
 
-}
-
-void login::GetDoctorverification(bool bDoctorpass)
-{
-	bDoctor = bDoctorpass;
 }
 
 int main()
 {
+	
 	login ologin; /*Declaring Object*/
 	string sUsername; /*Declaring Variabled*/
 	string sPassword;
 	bool bVerify = false; /*Loop Preporation*/
-	//bool bDoctor = false;
 	int iAttempts = 0;			/*^^^*/
 	cout << "Welcome to the program";/*Displaying text to User*/
 
@@ -142,16 +149,15 @@ int main()
 		ologin.GetDetails(sUsername, sPassword);
 		bVerify = ologin.bCheckLogin();
 		iAttempts++;
+		cout << flush;
+		system("CRS");
 		if (iAttempts > 2) {
 			exit(EXIT_FAILURE);
 	}
-		else if (bVerify == true) {
+		else{
 			cout << "You've logged in successfully";
 			MainMenu();
-		}
-		else {
-			bVerify = true;
-		}
+		};
 		
 	} while (bVerify == false );
 	/*END login loop*/
